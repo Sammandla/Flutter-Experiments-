@@ -1,6 +1,6 @@
 # Flutter Experiments - Complete Laboratory Suite
 
-A curated collection of 9 comprehensive Flutter laboratory experiments covering fundamental UI design, reactive input handling, state management, routing, SQLite database persistence, and cloud-native Google Cloud Firestore integration.
+A curated collection of 10 comprehensive Flutter laboratory experiments covering fundamental UI design, reactive input handling, state management, routing, SQLite database persistence, and cloud-native Google Cloud Firestore integration.
 
 Each experiment is structured as a standalone, production-ready Flutter project that can be opened, built, and executed independently in **VS Code**, **Android Studio**, or via the **Flutter CLI**.
 
@@ -19,6 +19,7 @@ Each experiment is structured as a standalone, production-ready Flutter project 
 | **07** | [Data Persistence with Cloud Firestore](#experiment-7--data-persistence-with-google-cloud-firestore) | `firebase_core`, `cloud_firestore`, Document Creation, Real-time Stream Builders | [`Experiment-7/`](./Experiment-7) |
 | **08** | [Searching Data in Cloud Firestore](#experiment-8--searching-information-in-google-firestore-database) | Firestore Queries (`where`), Dynamic Search by Name / Registration Number | [`Experiment-8/`](./Experiment-8) |
 | **09** | [Updating Data in Cloud Firestore](#experiment-9--updating-information-in-google-firestore-database) | Fetch-then-Edit workflow, Document Updating (`update`), Real-time State Sync | [`Experiment-9/`](./Experiment-9) |
+| **10** | [Secure Authentication with Cloud Firestore](#experiment-10--secure-authentication-and-password-hashing-with-cloud-firestore) | `crypto`, `sha256`, Cryptographic Salt, Firebase Firestore User Collection | [`Experiment-10/`](./Experiment-10) |
 
 ---
 
@@ -96,6 +97,14 @@ Each experiment is structured as a standalone, production-ready Flutter project 
   - Commit updates using Firestore's `update()` API with validation.
 - **Primary Files:** [`Experiment-9/lib/main.dart`](./Experiment-9/lib/main.dart)
 
+### Experiment 10: Secure Authentication and Password Hashing with Cloud Firestore
+- **Objective:** Build a secure authentication workflow utilizing SHA-256 password hashing and random cryptographic salt generation, backed by Cloud Firestore.
+- **Key Features:**
+  - Secure registration and login flow with input validation.
+  - Salt generation using `Random.secure()` and password hashing via `crypto` package (`sha256`).
+  - Safe user persistence in Firebase Cloud Firestore `users` collection without storing plaintext passwords.
+- **Primary Files:** [`Experiment-10/lib/main.dart`](./Experiment-10/lib/main.dart)
+
 ---
 
 ## 🚀 Getting Started & Execution Instructions
@@ -172,8 +181,13 @@ Flutter-Experiments/
 │   │   ├── firebase_options.dart
 │   │   └── main.dart
 │   └── pubspec.yaml
-└── Experiment-9/                  # Cloud Firestore Student Update
-    ├── firebase.json
+├── Experiment-9/                  # Cloud Firestore Student Update
+│   ├── firebase.json
+│   ├── lib/
+│   │   ├── firebase_options.dart
+│   │   └── main.dart
+│   └── pubspec.yaml
+└── Experiment-10/                 # Secure Authentication with Cloud Firestore
     ├── lib/
     │   ├── firebase_options.dart
     │   └── main.dart
@@ -182,9 +196,9 @@ Flutter-Experiments/
 
 ---
 
-## ☁️ Firebase Configuration Note (Experiments 7, 8, & 9)
+## ☁️ Firebase Configuration Note (Experiments 7, 8, 9, & 10)
 
-Experiments 7, 8, and 9 utilize **Firebase Cloud Firestore**. The repositories include standard `firebase.json` and default `firebase_options.dart` configuration templates. If you wish to connect these experiments to your own Google Cloud Firebase project:
+Experiments 7, 8, 9, and 10 utilize **Firebase Cloud Firestore**. The repositories include standard `firebase.json` and default `firebase_options.dart` configuration templates. If you wish to connect these experiments to your own Google Cloud Firebase project:
 1. Install the Firebase CLI: `npm install -g firebase-tools`
 2. Run `firebase login`
 3. Run `flutterfire configure` inside the experiment directory.

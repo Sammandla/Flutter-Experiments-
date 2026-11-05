@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Fruit List',
-      theme: ThemeData(
-        primarySwatch: Colors.green,
-      ),
+      theme: ThemeData(primarySwatch: Colors.green),
       home: const FruitHomePage(),
     );
   }
@@ -29,9 +27,7 @@ class FruitHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Fruit Market',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
@@ -39,7 +35,6 @@ class FruitHomePage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(10),
         children: const [
-
           FruitItem(
             fruitName: 'Apple',
             price: '₹180 / kg',
@@ -97,7 +92,6 @@ class FruitItem extends StatelessWidget {
 
         child: Row(
           children: [
-
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
               child: Image.asset(
@@ -114,7 +108,6 @@ class FruitItem extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Text(
                     fruitName,
                     style: const TextStyle(
@@ -125,12 +118,7 @@ class FruitItem extends StatelessWidget {
 
                   const SizedBox(height: 6),
 
-                  Text(
-                    description,
-                    style: const TextStyle(
-                      fontSize: 14,
-                    ),
-                  ),
+                  Text(description, style: const TextStyle(fontSize: 14)),
 
                   const SizedBox(height: 8),
 
@@ -146,10 +134,7 @@ class FruitItem extends StatelessWidget {
               ),
             ),
 
-            const Icon(
-              Icons.arrow_forward_ios,
-              size: 18,
-            ),
+            const Icon(Icons.arrow_forward_ios, size: 18),
           ],
         ),
       ),
